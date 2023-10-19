@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByAltok: "Tu sitio Web Seguro, Fácil y Rápido"</title>
+
+    <!-- Conexión a Normalize.css -->
+    <link rel="preload" href="css/normalize.css">   <!-- Preload: para que el sitio Web sea rápido -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Fuente de GoogleFonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Conexión a Styles.css -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">    
+
+     <!-- Carga de estilos de Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     
+</head>
+
+<body>
+
+    <header>
+        <h1 class="titulo padding">ByAltok <span>"Tu sitio Web Seguro, Fácil y Rápido"</span></h1>
+    </header>
+
+    <div class="nav-fondo">
+    <nav class="navegacion-principal contenedor">
+        <a href="/index.html"">Inicio</a>
+        <a href="/Nosotros.html">Nosotros</a>
+        <a href="/Servicios.html"">Servicios</a>
+        <a href="/Contactar.html"">Contacto</a>
+    </nav>
+    </div>
+
+    <main class="contenedor sombra">
+
+        <section class="hero2">
+            <div class="contenido-hero">
+                <h2>Contacto</h2>
+
+                <form class="formulario">
+                    <fieldset>
+                        <legend>Contactáctanos llenando todos los campos</legend>
+
+                        <div class="contenedor-campos">
+                            <div class="campo">
+                                <label>Nombre</label>
+                                <input class="input-text" type="text" placeholder="Tu nombre">
+                            </div>
+
+                            <div class="campo">
+                                <label>Teléfono></label>
+                                <input class="input-text" type="tel" placeholder="Tu Teléfono">
+                            </div>
+
+                            <div class="campo">
+                                <label>Correo</label>
+                                <input class="input-text" type="email" placeholder="Tu Email">
+                            </div>
+
+                            <div class="campo">
+                                <label>Mensaje</label>
+                                <textarea class="input-text"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="alinear-derecha flex">
+                        <input class="boton w-100" type="submit" value="Enviar">
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer scroll-snap">
+    <p>Todos los derechos reservados. Juan Saifan Freelancer</p>
+    </footer>
+
+</body>
+
+</html>

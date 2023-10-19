@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByAltok: "Tu sitio Web Seguro, Fácil y Rápido"</title>
+
+    <!-- Conexión a Normalize.css -->
+    <link rel="preload" href="css/normalize.css">   <!-- Preload: para que el sitio Web sea rápido -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Fuente de GoogleFonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Conexión a Styles.css -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">    
+
+     <!-- Carga de estilos de Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1 class="titulo padding">ByAltok <span>"Tu sitio Web Seguro, Fácil y Rápido"</span></h1>
+    </header>
+
+    <div class="nav-fondo">
+    <nav class="navegacion-principal contenedor no-scroll-snap">
+        <a href="/index.html"">Inicio</a>
+        <a href="/Nosotros.html">Nosotros</a>
+        <a href="/Servicios.html">Servicios</a>
+        <a href="/Contactar.html">Contactos</a>
+    </nav>
+    </div>
+    
+    <section class="hero3">
+        <div class="contenido-hero">
+          <div class="contenedor-nosotros">
+            
+            <div class="container mt-5">
+                <h1>Formulario de Cotizacion</h1>
+                  <form id="formulario" onsubmit="return validarFormulario(event)">
+
+                      <!--Paso 1-->
+                      <section class="contenedor sombra espacio-abajo seccion" id="seccion1">
+                        <h2>Paso 1:</h2>
+                          <div class="form-group">
+                              <label for="tipoPaginaWeb">Tipo de Página Web:</label>
+                              <select class="form-control" id="tipoPaginaWeb" name="tipoPaginaWeb">
+                                  <option value="">Seleccione un tipo</option>
+                                  <option value="ecommerce">Ecommerce</option>
+                                  <option value="blog">Blog</option>
+                                  <option value="sistemaNegocio">Sistema para Negocio</option>
+                                  <option value="redSocial">Red Social</option>
+                                  <option value="juegoWeb">Juego Web</option>
+                                  <option value="otro">Otro</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="tipoPlan">Tipo de Plan:</label><br>
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="standard" name="tipoPlan" value="standard">
+                                  <label class="form-check-label" for="standard">Standard</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="premium" name="tipoPlan" value="premium">
+                                  <label class="form-check-label" for="premium">Premium</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="oro" name="tipoPlan" value="oro">
+                                  <label class="form-check-label" for="oro">Oro</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="platinum" name="tipoPlan" value="platinum">
+                                  <label class="form-check-label" for="platinum">Platinum</label>
+                              </div>
+                          </div>
+                          <button type="button" class="btn btn-primary" onclick="siguientePaso(2)">Siguiente</button>
+                      </section>
+
+                      <!--Paso 2-->
+                      <section class="contenedor sombra espacio-abajo seccion" id="seccion2" style="display: none;">
+                        <h2>Paso 2:</h2>
+                          <div class="form-group">
+                              <label for="telefono">Teléfono de Contacto:</label>
+                              <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Correo Electrónico:</label>
+                              <input type="email" class="form-control" id="correo" name="email" placeholder="Correo Electrónico">
+                          </div>
+                          <button type="button" class="btn btn-primary" onclick="anteriorPaso(1)">Anterior</button>
+                          <button type="button" class="btn btn-primary" onclick="siguientePaso(3)">Siguiente</button>
+                        </section>
+
+                      <!--Paso 3-->  
+                      <section class="contenedor sombra espacio-abajo seccion" id="seccion3" style="display: none;">
+                        <h2>Paso 3:</h2>
+                          <div class="form-group">
+                              <label for="nombre completo">Nombre Completo</label>
+                              <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" placeholder="Nombre Completo">
+                          </div>
+                          <div class="form-group">
+                              <label for="comentario">Comentario:</label>
+                              <textarea class="form-control" id="comentario" name="comentario" rows="4" placeholder="Detalla un poco tu proyecto"></textarea>
+                          </div>
+                          <button type="button" class="btn btn-primary" onclick="anteriorPaso(2)">Anterior</button>
+                          <button type="button" class="btn btn-primary" onclick="siguientePaso(4), mostrarResumen()">Confirmar</button>
+                      </section>
+
+                     <main>
+
+                     <!-- Formulario Final -->
+
+                        <section class="contenedor flex-centrar sombra seccion espacio-abajo" id="seccion4" style="display: none;">
+                           <h3>Resumen</h3> 
+                           <div id="resumenFormulario"></div>
+                           <button type="button" class="btn btn-primary" onclick="anteriorPaso(3)">Anterior</button>
+                           <button type="button" class="btn btn-primary" onclick="exportarPDF()">Imprimir</button>
+                           <button type="submit" class="btn btn-primary">Enviar</button>
+                        </section>
+                     </main>
+
+                  </form>
+                </div>
+          </div>
+    </section>
+
+    <footer class="footer no-scroll-snap">
+      <p>Todos los derechos reservados. Juan Saifan Freelancer</p>
+      </footer>
+
+    <!--------------------------------->
+    <!------- Carga de Scripts -------->
+    <!--------------------------------->
+    
+    <!-- Carga la libreria de JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Carga libreria de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Carga de la librería jsPDF -->
+    <script type="text/javascript" src="JavaScript/jspdf.min.js"></script>
+
+    <!-- Carga la hoja Script con las funciones  -->
+    <script src="JavaScript/Script.js" ></script>
+
+</body>
+</html>
